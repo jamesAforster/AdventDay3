@@ -19,27 +19,14 @@ namespace Advent3
                 {
                     if (elementIndex > row.Length - 1)
                     {
-                        if (elementIndex == 33)
-                        {
-                            elementIndex = 2;
-                        }
-                        else if (elementIndex == 32)
-                        {
-                            elementIndex = 1;
-                        }
-                        else if (elementIndex == 31)
-                        {
-                            elementIndex = 0;
-                        }
+                        elementIndex = Math.Abs(elementIndex - row.Length);
                     }
                     if (input[rowIndex][elementIndex].ToString() == "#")
                     {
                         count += 1;
                     }
-                    rowIndex += 1;
-                    elementIndex += 3;
-                    Console.WriteLine("row index: " + rowIndex);
-                    Console.WriteLine("element index: " + elementIndex);
+                    elementIndex += 1;
+                    rowIndex += 2;
                 }
                 catch
                 {
